@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def show
+  def update
   end
 
-  def update
+  def show
   end
 
   def destroy
