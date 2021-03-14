@@ -17,6 +17,12 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// サクセスメッセージ
 #notice {
   color: green;
+}
+
+// Sign-in, Log-inページ
+.field, .actions {
+  margin-bottom: 10px;
 }
