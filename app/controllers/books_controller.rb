@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     if @book.user_id = current_user.id
       @user = current_user
     else
-      @user = @book.user
+      @user.id = @book.user_id
     end
   end
 
@@ -18,7 +18,11 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @user = @book.user
+    if @book.user_id = current_user.id
+      @user = current_user
+    else
+      @user.id = @book.user_id
+    end
   end
 
   def edit
