@@ -2,11 +2,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    if @book.user_id = current_user.id
-      @user = current_user
-    else
-      @user.id = @book.user_id
-    end
+    @user = current_user
   end
 
   def create
@@ -18,11 +14,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    if @book.user_id = current_user.id
-      @user = current_user
-    else
-      @user.id = @book.user_id
-    end
+    @user = @book.user
   end
 
   def edit
