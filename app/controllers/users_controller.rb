@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :new_book_registration, only: [:index, :show]
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -24,6 +26,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def new_book_registration
+    @book = Book.new
+  end
 
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
