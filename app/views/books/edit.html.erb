@@ -3,7 +3,9 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
-      <%= render 'books/book_error', book: @book %>
+      <% if @book.errors.any? %>
+        <%= render 'book_error', book: @book %>
+      <% end %>
 
       <%= form_with model: @book, local:true do |f| %>
         <div class="form-group">
